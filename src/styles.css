@@ -73,3 +73,32 @@ td {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+
+#promedio-form {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.materia-input {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+}
+
+.materia-input label {
+    flex-basis: 40%;
+    text-align: left;
+}
+
+.materia-input input {
+    flex-basis: 55%;
+}
+
+#promedio-resultado {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #337ab7;
+}

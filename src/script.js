@@ -25,4 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
         tablaHTML += '</tbody></table>';
         tablaContainer.innerHTML = tablaHTML;
     }
+
+    const promedioForm = document.getElementById('promedio-form');
+    const promedioResultado = document.getElementById('promedio-resultado');
+
+    promedioForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const espanol = parseFloat(document.getElementById('espanol').value);
+        const artes = parseFloat(document.getElementById('artes').value);
+        const ingles = parseFloat(document.getElementById('ingles').value);
+
+        if (isNaN(espanol) || isNaN(artes) || isNaN(ingles) ||
+            espanol < 0 || espanol > 10 ||
+            artes < 0 || artes > 10 ||
+            ingles < 0 || ingles > 10) {
+            alert('Por favor, introduce calificaciones válidas entre 0 y 10 para todas las materias.');
+            return;
+        }
+
+        const promedio = (espanol + artes + ingles) / 3;
+        promedioResultado.innerHTML = `Promedio del Bloque: ${promedio.toFixed(2)}`;
+    });
 });
