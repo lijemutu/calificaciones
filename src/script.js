@@ -46,4 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const promedio = (espanol + artes + ingles) / 3;
         promedioResultado.innerHTML = `Promedio del Bloque: ${promedio.toFixed(2)}`;
     });
+
+    const cienciasMatematicasForm = document.getElementById('ciencias-matematicas-form');
+    const cienciasMatematicasResultado = document.getElementById('ciencias-matematicas-resultado');
+
+    cienciasMatematicasForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const ciencias = parseFloat(document.getElementById('ciencias').value);
+        const matematicas = parseFloat(document.getElementById('matematicas').value);
+
+        if (isNaN(ciencias) || isNaN(matematicas) ||
+            ciencias < 0 || ciencias > 10 ||
+            matematicas < 0 || matematicas > 10) {
+            alert('Por favor, introduce calificaciones válidas entre 0 y 10 para Ciencias y Matemáticas.');
+            return;
+        }
+
+        const promedioCienciasMatematicas = (ciencias + matematicas) / 2;
+        cienciasMatematicasResultado.innerHTML = `Promedio de Ciencias y Matemáticas: ${promedioCienciasMatematicas.toFixed(2)}`;
+    });
 });

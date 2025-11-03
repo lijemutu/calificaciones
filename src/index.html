@@ -37,6 +37,22 @@
         <div id="promedio-resultado"></div>
     </div>
 
+    <div class="container" style="margin-top: 20px;">
+        <h1>Promedio de Ciencias y Matemáticas</h1>
+        <form id="ciencias-matematicas-form">
+            <div class="materia-input">
+                <label for="ciencias">Ciencias (0-10):</label>
+                <input type="number" id="ciencias" min="0" max="10" step="0.01" required>
+            </div>
+            <div class="materia-input">
+                <label for="matematicas">Matemáticas (0-10):</label>
+                <input type="number" id="matematicas" min="0" max="10" step="0.01" required>
+            </div>
+            <button type="submit">Calcular Promedio</button>
+        </form>
+        <div id="ciencias-matematicas-resultado"></div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
